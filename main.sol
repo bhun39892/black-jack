@@ -150,7 +150,9 @@ contract Blackjack {
         (bool success, ) = msg.sender.call{value: amount}("");
         require(success, "Withdrawal failed.");
     }
-    
+    function getBalance() public view returns (uint) {
+        return balances[msg.sender];
+    }
 }
 
 
